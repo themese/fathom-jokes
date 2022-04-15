@@ -77,3 +77,13 @@ FROM json_populate_recordset (NULL::jokes,
 ```
 
 Now you should have your DB initialized with all the data, the api and ui can now be installed and ran correctly.
+
+# API Architecture
+
+For the API I decided to go with a very simplified version of an onion/hexagonal architecture.
+We are declaring (and decoupling) our repositories, so we have interfaces that will get implemented. These implementations will inject the interfaces in order to obtain our layer of abstraction. This way we could change our implementations with minimal effort.
+
+Again, this was done for the sake of demonstrating capabilities, for a real world project of this scope, this is overkill.
+
+In order to achieve this pure decoupling, I decided to use `injection-js`.
+This could be achieved similarly with NestJS.
