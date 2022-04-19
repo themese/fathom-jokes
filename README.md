@@ -87,3 +87,5 @@ Again, this was done for the sake of demonstrating capabilities, for a real worl
 
 In order to achieve this pure decoupling, I decided to use `injection-js`.
 This could be achieved similarly with NestJS.
+
+The API connects to Postgres using `node-postgres`. You can find the `db_connect.ts` class where we do a generic init so we don't need to connect to the db everysingle time we access a repo_impl class, avoiding code duplication.
