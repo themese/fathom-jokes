@@ -1,6 +1,6 @@
 import { Inject, Injectable } from "injection-js";
 import { JOKES_REPOSITORY } from "../injection/injection_tokens";
-import { Joke } from "../models/jokes";
+import { Joke } from "../models/joke";
 import { JokesRepository } from "../repositories/interfaces/jokes.repository";
 
 @Injectable()

@@ -1,4 +1,4 @@
-import { Joke } from "../../models/jokes";
+import { Joke } from "../../models/joke";
 
 
 export interface JokesRepository {

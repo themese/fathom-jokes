@@ -1,5 +1,5 @@
 import { Injectable } from "injection-js";
-import { Joke } from "../../models/jokes";
+import { Joke } from "../../models/joke";
 import { JokesRepository } from "../interfaces/jokes.repository";
 
 import db_connect from '../db_connect';

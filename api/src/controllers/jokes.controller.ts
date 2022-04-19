@@ -1,6 +1,6 @@
 import { Inject } from "injection-js";
 import {  JOKES_SERVICE } from "../injection/injection_tokens";
-import { Joke } from "../models/jokes";
+import { Joke } from "../models/joke";
 import JokesService from "../services/jokes.service";
 
 
