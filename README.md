@@ -6,10 +6,9 @@ App I've made as a technical task for an interview.
 
 Go to the Postgresql section below to initialize the DB first.
 App is set up as a monorepo, you can find the api and the ui folders.
-UI can be ran with `npm run dev` locally or `npm start`. For interview processes, I recommend using `npm run dev` for simplicity
-and if you want to see the full build `npm run build`.
-
-API can be ran with the same exact commands.
+UI can be ran with `npm start`.
+API can be run with either `npm run dev` for development or `npm start` for real build.
+In order to configure the DB see the Install Postgres section, however once it's installed you can run it using `docker compose up` after navigating to the `api/db/init` folder. I strongly recommend using docker desktop for simplicity.
 
 # Install Postgres with Docker
 
@@ -89,3 +88,14 @@ In order to achieve this pure decoupling, I decided to use `injection-js`.
 This could be achieved similarly with NestJS.
 
 The API connects to Postgres using `node-postgres`. You can find the `db_connect.ts` class where we do a generic init so we don't need to connect to the db everysingle time we access a repo_impl class, avoiding code duplication.
+
+# UI Architecture
+
+For the UI I went with the minimum I thought necessary to achieve what is asked. That is a website at it's core, a html file, js script and css.
+In order to run it, you can navigate to the index.html file and manually open it in a browser or use the `npm start` command, which will only run a live-server that will open the same file. I used it as it has hot reload, which is really useful for development.
+
+I used jQuery as per the requirements, however the code is simple enough to not require the use of it.
+It also doesn't have bootstrap, it's pure CSS. Outise jQuery, it only has fontawesome for a nice info icon and google's roboto font.
+
+As the main focus of the website is to display a joke, I didn't want to go with anything fancy that would override the scope of this, I want to be very clear and concise. Go to the website, get a joke, click the website/joke and get the punchline, laugh.
+I thought about making different type of website, even including a menu to obtain all jokes, but I decided it was irrelevant. If this was a real product, we would only care about the user getting the joke with minimal intrusion, hence I decided to just do that, to get a joke.

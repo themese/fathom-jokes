@@ -6,6 +6,7 @@ import { JOKES_REPOSITORY, JOKES_SERVICE } from './injection/injection_tokens';
 import JokesService from './services/jokes.service';
 import JokesController from './controllers/jokes.controller';
 import { JokesRepositoryImpl } from './repositories/implementations/jokes.repository_impl';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ const providers: Provider[] = [
 ];
 const injector = ReflectiveInjector.resolveAndCreate(providers);
 const jokesController: JokesController = injector.get(JokesController);
+app.use(cors());
 
 app.get('/api/jokes', (req: Request, res: Response) => {
   jokesController
