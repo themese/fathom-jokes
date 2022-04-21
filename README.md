@@ -104,3 +104,6 @@ It also doesn't have bootstrap, it's pure CSS. Outise jQuery, it only has fontaw
 
 As the main focus of the website is to display a joke, I didn't want to go with anything fancy that would override the scope of this, I want to be very clear and concise. Go to the website, get a joke, click the website/joke and get the punchline, laugh.
 I thought about making different type of website, even including a menu to obtain all jokes, but I decided it was irrelevant. If this was a real product, we would only care about the user getting the joke with minimal intrusion, hence I decided to just do that, to get a joke.
+
+Also, the color choice is in order to reflect this. You get something more bright with the setup, then something dark that opposes to the setup color whenever the punchline appears just to create this dynamism and contrast.
+This was my decision to create a bit of fun!
