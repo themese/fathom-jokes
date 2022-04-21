@@ -13,12 +13,11 @@ In order to configure the DB see the Install Postgres section, however once it's
 
 # Install Postgres with Docker
 
-You will need Docker in order to use this. I'm going to document on the assumption that you have docker installed and basic knowledge of docker.
-I won't assume knowledge over the concepts, but that you know how to use it and you know how to use a bash shell.
+You will need Docker in order to use this. I strongly recommend installing [Docker Desktop](https://www.docker.com/products/docker-desktop/) as it will contain all the required packages for your OS.
 
 We will use a Docker compose file for our db init. You can find the `docker-compose.yml` inside `api/db/init`.
 
-Navigate to the folder and run `docker compose up`. If everything went fine, you should be able to go to `localhost:5050` and you shuold see the pgAdmin login page. Login using admin@admin.com and root as a password. Everytime you want to spin up the DB you will have to repeat these steps and use `docker compose up`. I strongly recommend installing [Docker Desktop](https://www.docker.com/products/docker-desktop/) so you can start and stop simply by clicking the start of the process.
+Navigate to the folder and run `docker compose up`. If everything went fine, you should be able to go to `localhost:5050` and you shuold see the pgAdmin login page. Login using admin@admin.com and root as a password. Everytime you want to spin up the DB you will have to repeat these steps and use `docker compose up`. You can use Docker Desktop to start and stop simply by clicking the start of the process.
 Once the docker has finished you should see something similar in your console
 ![](./docs/pgadmin5.png)
 
