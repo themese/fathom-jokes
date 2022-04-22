@@ -43,16 +43,26 @@ To recap, now we have the SQL DB and our json data is located on `api/db/pg-data
 
 PLEASE NOTE that the data in this project is the same that was provided but modified. I had to escape single quote characters and on top of that the id 189 was duplicated, so I changed on of the entries to id=388. I suggest using the data from the project instead of the provided, else it won't work.
 
-Make sure to execute the following script in pgAdmin
+Next step, we will need to create our joke DB and add the provided data into it. The script looks something like this, however we will need to put all the jokes from the provided joke repository where the variable 'JSON_DATA' is below.
 
 ```
+CREATE TABLE jokes
+(
+	id INT NOT NULL PRIMARY KEY,
+	 type VARCHAR(255) NOT NULL,
+	 setup VARCHAR(255) NOT NULL,
+	 punchline VARCHAR(255) NOT NULL
+);
+GO
 INSERT INTO jokes
 SELECT *
 FROM json_populate_recordset (NULL::jokes,
 ' JSON_DATA');
 ```
 
-Where `JSON_DATA` is the whole content in the file, with the array opening and closing brackets. Below you can see a script but with 1 item in the array for the sake of not polluting the Readme file, but please copy all the content of the `jokes.json` file and add it to the script
+Where `JSON_DATA` is the whole content of the jokes file, with the array opening and closing brackets. The joke file is in the `api/db/pg-data/jokes.json` path.
+
+Below you can see a script but with 1 item in the array for the sake of not polluting the Readme file, but please copy all the content of the `jokes.json` file and add it to the script.
 
 Run the following script in the jokes_db:
 
