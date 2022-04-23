@@ -1,7 +1,8 @@
 # fathom-jokes
+Hi there, welcome to my take on a joke website. 
 
-App I've made as a technical task for an interview.
-
+If you are curious, this is an app I've made as a technical task for an interview.
+Feel free to criticize it and submit anything you might think of.
 # How to Run
 
 The first thing that you will need to do is initialize the Database.
@@ -19,7 +20,7 @@ You will need Docker in order to do this. I strongly recommend installing [Docke
 
 We will use a Docker compose file for our db init. You can find the `docker-compose.yml` inside `api/db/init`.
 
-Navigate to the folder and run `docker compose up`. If everything went fine, you should see something like this:
+Navigate to the folder and run in a terminal `docker compose up`. If everything went fine, you should see something like this:
 ![](./docs/pgadmin5.png)
 
 Now, you should be able to go to `localhost:5050` and you should see the pgAdmin login page. Login using admin@admin.com and root as a password. Everytime you want to spin up the DB you will have to repeat these steps and use `docker compose up`. You can use Docker Desktop to start and stop simply by clicking the start of the process.
@@ -74,7 +75,6 @@ CREATE TABLE jokes
 	 setup VARCHAR(255) NOT NULL,
 	 punchline VARCHAR(255) NOT NULL
 );
-GO
 INSERT INTO jokes
 SELECT *
 FROM json_populate_recordset (NULL::jokes,
